@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('start');
 });
+
+Route::get('/start', 'HomeController@index');
+Route::get('/captain/{slug}', 'CaptainController@show');
+Route::post('/captain/{slug}', 'CaptainController@store');
+Route::get('/captains', 'CaptainController@index');
+// Route::get('/create', 'CaptainController@create');
 
 Auth::routes();
